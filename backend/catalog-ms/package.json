@@ -1,0 +1,21 @@
+{
+  "name": "catalog-service",
+  "version": "1.0.0",
+  "description": "API for product listings and details",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run build",
+    "dev": "nodemon ./src/app.js",
+    "start": "node ./src/app.js"
+  },
+  "author": "Siba N.",
+  "license": "MIT",
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.423.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
