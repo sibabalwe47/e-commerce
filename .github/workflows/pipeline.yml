@@ -30,7 +30,7 @@ jobs:
         context: ./backend/catalo-ms/
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/catalog-ms:${GITHUB_SHA}
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/catalog-ms:latest
 
 # - name: Install AWS CLI v2
 #   run: |
