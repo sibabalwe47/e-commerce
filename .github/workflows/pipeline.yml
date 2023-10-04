@@ -27,8 +27,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
-        context: /home/runner/work/e-commerce/e-commerce/backend/catalo-ms/
-        file: ./Dockerfile
+        context: .
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/catalog-ms:latest
 
