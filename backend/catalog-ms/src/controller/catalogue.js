@@ -1,8 +1,11 @@
-import products from '../data/products.json' assert { type: "json" };
-import product from '../data/product.json' assert { type: "json" };
+import * as CatalogueStore from '../libs/dynamodb/index.js'
 
+/*
+ *  Get products
+ */
 const getAllProducts = async (req, res) => {
     try {
+        const products = await CatalogueStore.getItemsHandler();
         res.status(200).json({
           data: products
         });
@@ -14,12 +17,18 @@ const getAllProducts = async (req, res) => {
       }
 };
 
+/*
+ *  Get product
+ */
 const getProduct = async (req, res) => {
     try {
+        const product = await CatalogueStore.getItemHandler(req.body.id);
+        console.log("ERROR product::", product)
         res.status(200).json({
           data: product
         });
       } catch (error) {
+        console.log("ERROR::", error)
         res.status(500).json({
           type: error.type,
           message: error.message,
