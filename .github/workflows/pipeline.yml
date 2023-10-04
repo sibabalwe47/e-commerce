@@ -24,9 +24,8 @@ jobs:
       run: |
 
         echo ${{ github.workspace }}
-        cd ${{ github.workspace }}
-        ls
-        docker build . --file Dockerfile --tag $DOCKER_USER/catalog:${{ steps.date.outputs.date }}
+        cd ${{ github.workspace }} && ls
+        docker build ${{ github.workspace }}/backend/catalog-ms --file Dockerfile --tag $DOCKER_USER/catalog:${{ steps.date.outputs.date }}
     - name: Docker Push
       run: |
         docker push $DOCKER_USER/catalog:${{ steps.date.outputs.date }}
