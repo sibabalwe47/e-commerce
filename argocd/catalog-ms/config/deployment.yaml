@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: catalog
-        image: siba920429/catalog:2023-10-06-T-14-09
+        image: siba920429/catalog:latest
         env:
         - name: PORT
           value: "4000"
