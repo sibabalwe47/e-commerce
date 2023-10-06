@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog
+  namespace: fargate-wl
+spec:
+  selector:
+    matchLabels:
+      app: catalog
+  template:
+    metadata:
+      labels:
+        app: catalog
+    spec:
+      containers:
+      - name: catalog
+        image: siba920429/catalog:2023-10-06-T-14-09
+        env:
+        - name: PORT
+          value: "4000"
+        ports:
+        - containerPort: 4000
+
