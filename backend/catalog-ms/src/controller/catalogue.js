@@ -28,7 +28,7 @@ const getProduct = async (req, res) => {
         });
       } catch (error) {
         console.log("ERROR::", error)
-        res.status(result["$metadata"].httpStatusCode).json({
+        res.status(error.statusCode).json({
           type: error.type,
           message: error.message,
         });
